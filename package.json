@@ -1,0 +1,26 @@
+{
+  "name": "bot_ai",
+  "version": "1.0.0",
+  "description": "bot para app de mensagem",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/francinaldodeandrade/bot_ia.git"
+  },
+  "author": "Naldo.Dev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/francinaldodeandrade/bot_ia/issues"
+  },
+  "homepage": "https://github.com/francinaldodeandrade/bot_ia#readme",
+  "devDependencies": {
+    "dotenv-safe": "^8.2.0",
+    "nodemon": "^3.1.0"
+  }
+}
