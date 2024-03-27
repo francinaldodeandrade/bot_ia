@@ -1,21 +1,31 @@
-import dotenv from "dotenv"
+import dotenv from "dotenv-safe"
 dotenv.config()
 
 import express from "express"
+const routes = express.Router()
 const app = express()
 
 import cors from "cors"
 app.use(cors())
 
+import bodyParser from "body-parser"
+app.use(bodyParser.json())
+
 const root = process.env.ROOT
 
-import read_data from "./controllers/controllers_bot.js"
-app.use(root, read_data)
+import controllers from "./controllers/controllers_bot.js"
 
-import create_msg from "./controllers/controllers_bot.js"
-app.use(root, create_msg)
+// app.get(root, (req, res)=>{
+//     res.status(200).json({
+//         statusCode: 200,
+//         message: "Servidor em execução!"
+//     })
+// })
 
-import get_contacts from "./controllers/controllers_bot.js"
-app.use(root, get_contacts)
+app.use(root, controllers.read_data)
+
+//app.use(root, controllers.create_msg)
+
+//app.use(root, controllers.get_contacts)
 
 export  default app
